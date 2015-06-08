@@ -12,7 +12,7 @@ class DiceSet
       puts "roll is not a number"
       exit
     end
-    @values.clear()
+    @values = []
     num.times do |x|
       @values.push(rand(1..6))
     end
@@ -48,11 +48,9 @@ class AboutDiceProject < Neo::Koan
     dice = DiceSet.new
 
     dice.roll(5)
-    puts dice.values
     first_time = dice.values
 
     dice.roll(5)
-    puts dice.values
     second_time = dice.values
 
     assert_not_equal first_time, second_time,
