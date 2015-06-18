@@ -22,7 +22,6 @@ class Proxy
   
   def method_missing(methodID, *args)
     @messages.push(methodID)
-    p @messages
     if args.empty?
       @object.send(methodID)
     else
